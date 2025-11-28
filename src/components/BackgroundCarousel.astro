@@ -1,0 +1,46 @@
+---
+// src/components/BackgroundCarousel.astro
+interface Props {
+    images: string[];
+    interval?: number; // Opcional: para controlar la velocidad
+}
+
+const { images, interval = 2000 } = Astro.props;
+---
+
+<div class="carousel-container absolute inset-0 w-full h-full -z-10">
+    {
+        images.map((img, index) => (
+            <img
+                src={img}
+                class={`carousel-bg absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${index === 0 ? "opacity-100" : "opacity-0"}`}
+                alt={`Fondo ${index + 1}`}
+                data-index={index}
+            />
+        ))
+    }
+    <!-- Capa oscura integrada -->
+    <div class="absolute inset-0 bg-black/40"></div>
+</div>
+
+<script define:vars={{ interval }}>
+    // El script ahora vive encapsulado dentro del componente
+    const containers = document.querySelectorAll(".carousel-container");
+
+    containers.forEach((container) => {
+        const images = container.querySelectorAll(".carousel-bg");
+        let currentIndex = 0;
+
+        if (images.length > 1) {
+            setInterval(() => {
+                images[currentIndex].classList.remove("opacity-100");
+                images[currentIndex].classList.add("opacity-0");
+
+                currentIndex = (currentIndex + 1) % images.length;
+
+                images[currentIndex].classList.remove("opacity-0");
+                images[currentIndex].classList.add("opacity-100");
+            }, interval);
+        }
+    });
+</script>

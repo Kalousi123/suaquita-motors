@@ -1,0 +1,118 @@
+<header
+  class="absolute flex justify-between items-center px-8 py-5 bg-black text-white w-full top-0 z-40"
+>
+  <button
+    id="open-menu"
+    class="group flex items-center gap-3 focus:outline-none"
+  >
+    <div class="flex flex-col gap-1.5">
+      <span
+        class="block h-0.5 w-6 bg-white group-hover:bg-gray-300 transition-colors"
+      ></span>
+      <span
+        class="block h-0.5 w-6 bg-white group-hover:bg-gray-300 transition-colors"
+      ></span>
+      <span
+        class="block h-0.5 w-6 bg-white group-hover:bg-gray-300 transition-colors"
+      ></span>
+    </div>
+    <span
+      class="text-sm font-medium uppercase tracking-wider group-hover:text-gray-300 transition-colors"
+      >Menú</span
+    >
+  </button>
+
+  <div
+    class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+  >
+    <a href="/">
+      <img
+        src="/imagenes/imagen-logo.png"
+        alt="Logo"
+        class="h-8 w-auto object-contain"
+      />
+    </a>
+  </div>
+</header>
+
+<div
+  id="mobile-menu"
+  class="fixed inset-0 bg-black z-50 flex flex-col text-white transition-transform duration-500 ease-in-out translate-x-full"
+>
+  <div class="p-8 flex justify-start">
+    <button
+      id="close-menu"
+      class="group flex items-center gap-3 focus:outline-none"
+    >
+      <div class="relative w-6 h-6">
+        <span
+          class="absolute top-1/2 left-0 w-full h-0.5 bg-white rotate-45 transform -translate-y-1/2 group-hover:bg-gray-300 transition-colors"
+        ></span>
+        <span
+          class="absolute top-1/2 left-0 w-full h-0.5 bg-white -rotate-45 transform -translate-y-1/2 group-hover:bg-gray-300 transition-colors"
+        ></span>
+      </div>
+      <span
+        class="text-sm font-medium uppercase tracking-wider group-hover:text-gray-300 transition-colors"
+        >Cerrar</span
+      >
+    </button>
+  </div>
+
+  <nav class="flex-1 flex flex-col justify-center px-12 md:px-24">
+    <ul class="space-y-6 text-2xl font-light tracking-wide">
+      <li>
+        <a href="/modelos" class="block hover:text-gray-400 transition-colors"
+          >Modelos</a
+        >
+      </li>
+      <li>
+        <a href="/Nosotros" class="block hover:text-gray-400 transition-colors"
+          >Nosotros</a
+        >
+      </li>
+      <li>
+        <a
+          href="/Contactenos"
+          class="block hover:text-gray-400 transition-colors">Contáctenos</a
+        >
+      </li>
+      <li>
+        <a href="/Ubicacion" class="block hover:text-gray-400 transition-colors"
+          >Ubicación</a
+        >
+      </li>
+      <li>
+        <a href="/Pruebas" class="block hover:text-gray-400 transition-colors"
+          >Pruebas</a
+        >
+      </li>
+      <li>
+        <a
+          href="/Presentacion"
+          class="block hover:text-gray-400 transition-colors">Presentación</a
+        >
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<script>
+  const openBtn = document.getElementById("open-menu");
+  const closeBtn = document.getElementById("close-menu");
+  const menu = document.getElementById("mobile-menu");
+
+  if (openBtn && closeBtn && menu) {
+    openBtn.addEventListener("click", () => {
+      // Al hacer click en abrir, QUITAMOS la clase que lo empuja a la derecha
+      // El menú regresa a su posición original (0) suavemente
+      menu.classList.remove("translate-x-full");
+    });
+
+    closeBtn.addEventListener("click", () => {
+      // Al hacer click en cerrar, AGREGAMOS la clase
+      // El menú se desliza hacia la derecha hasta desaparecer
+      menu.classList.add("translate-x-full");
+    });
+  }
+</script>

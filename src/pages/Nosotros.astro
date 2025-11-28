@@ -1,0 +1,135 @@
+---
+import Layout from "../layouts/Layout.astro";
+import BackgroundCarousel from "../components/BackgroundCarousel.astro"; // Importas el componente
+const imagenesCarrusel = [
+  "/imagenes/imagenes-carrusel-autos/imagen2.jpg",
+  "/imagenes/imagenes-carrusel-autos/imagen3.jpg",
+  "/imagenes/imagenes-carrusel-autos/imagen4.jpg",
+  "/imagenes/imagenes-carrusel-autos/imagen5.jpg",
+];
+---
+
+<Layout>
+  <!-- primera seccion -->
+
+  <section class="relative h-screen flex items-end overflow-hidden">
+    <video
+      autoplay
+      loop
+      muted
+      playsinline
+      class="absolute z-0 inset-0 w-full h-full object-cover"
+      src="/videos/video_fondo_exclusivo.webm"></video>
+
+    <div class="absolute inset-0 z-5 bg-black/50 w-full h-full"></div>
+
+    <div class="relative z-10 text-left p-8 md:p-12 lg:p-16">
+      <h1 class="text-5xl text-white">Suaquita exclusivo</h1>
+    </div>
+  </section>
+
+  <!-- segunda seccion -->
+  <section class="bg-[#101319] py-10 px-4">
+    <div
+      class="max-w-7xl mx-auto bg-[#34363b] rounded-2xl p-10 flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-white/10"
+    >
+      <!-- Columna 1 -->
+      <div class="flex-1 p-8">
+        <h2 class="text-2xl font-semibold text-white mb-3">Moderno</h2>
+        <p class="text-gray-400 leading-relaxed">
+          Ultima tecnología de vehiculos electricos a su alcance.
+        </p>
+      </div>
+
+      <!-- Columna 2 -->
+      <div class="flex-1 p-8">
+        <h2 class="text-2xl font-semibold text-white mb-3">Sorprendente</h2>
+        <p class="text-gray-400 leading-relaxed">
+          Los mejores accesorios y diseños que superen tus expectativas.
+        </p>
+      </div>
+
+      <!-- Columna 3 -->
+      <div class="flex-1 p-8">
+        <h2 class="text-2xl font-semibold text-white mb-3">Duradero</h2>
+        <p class="text-gray-400 leading-relaxed">
+          Material de la mejor calidad para tu vehiculo.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- tecera seccion -->
+
+  <section class="relative h-screen flex items-start p-8 overflow-hidden">
+    <!-- Usas el componente aquí -->
+    <BackgroundCarousel images={imagenesCarrusel} interval={3000} />
+
+    <div
+      class="relative z-10 p-8 bg-[#101319] text-white rounded-2xl mt-20 ml-10 text-left"
+    >
+      <h1 class="text-5xl font-bold mb-4">Moderno</h1>
+      <p class="text-xl text-gray-400">Los últimos modelos a nivel mundial</p>
+    </div>
+  </section>
+
+  <!-- cuarta seccion -->
+  <section
+    class="relative h-screen flex items-start overflow-hidden bg-cover bg-center"
+    style="background-image: url(/imagenes/imagenes-nosotros/blade-battery-pc.jpg);"
+  >
+    <div class="relative z-10 w-2xl">
+      <div class="p-5 text-white mt-10 ml-10 text-left">
+        <h1 class="text-4xl font-bold mb-2">Blade Batery</h1>
+      </div>
+
+      <div
+        class="bg-[#101319]/50 p-5 text-white rounded-2xl mt-5 ml-10 text-left"
+      >
+        <!-- ultraseguridad -->
+        <div>
+          <h1 class="text-xl font-bold mb-1">Ultra seguridad</h1>
+          <p class="text-10 text-gray-400">
+            La bateria blade es la unica bateria que ha pasado la prueba de
+            penetracion de clavos.
+          </p>
+        </div>
+
+        <!-- LÍNEA DE SEPARACIÓN -->
+        <div class="border-t border-white/20 w-1/2 mx-auto my-4"></div>
+
+        <!-- ultra fuerza -->
+        <div>
+          <h1 class="text-xl font-bold mb-1">Ultra fuerza</h1>
+          <p class="text-10 text-gray-400">
+            La batería Blade puede alcanzar una resistencia a la compresión de
+            hasta 450 kN.
+          </p>
+        </div>
+
+        <!-- LÍNEA DE SEPARACIÓN -->
+        <div class="border-t border-white/20 w-1/2 mx-auto my-4"></div>
+
+        <!-- ultra largo alcance -->
+        <div>
+          <h1 class="text-xl font-bold mb-1">Ultra largo alcance</h1>
+          <p class="text-10 text-gray-400">
+            Con la batería Blade, un BYD HAN EV tiene una autonomía de 605 km.
+          </p>
+        </div>
+
+        <!-- LÍNEA DE SEPARACIÓN -->
+        <div class="border-t border-white/20 w-1/2 mx-auto my-4"></div>
+
+        <!-- ultra alta capacidad de carga -->
+        <div>
+          <h1 class="text-xl font-bold mb-1">Ultra Alta Capacidad de Carga</h1>
+          <p class="text-10 text-gray-400">
+            En sólo media hora, la batería puede cargarse del 30% al 80% y tiene
+            una potencia máxima de descarga instantánea.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

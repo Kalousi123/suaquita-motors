@@ -1,0 +1,165 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <!-- Hero Section -->
+  <section
+    class="relative h-[50vh] flex items-center justify-center overflow-hidden"
+  >
+    <div class="absolute inset-0 bg-black/60 z-10"></div>
+    <img
+      src="/imagenes/imagenes-carrusel-autos/imagen3.jpg"
+      alt="Showroom Suaquita Motors"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <div class="relative z-20 text-center px-4">
+      <h1 class="text-5xl md:text-7xl font-bold text-white mb-4 tracking-tight">
+        Visítanos
+      </h1>
+      <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+        Vive la experiencia Suaquita en nuestro exclusivo showroom.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="bg-[#101319] py-20 px-4">
+    <div
+      class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20"
+    >
+      <!-- Left Column: Info -->
+      <div class="space-y-12">
+        <!-- Address -->
+        <div>
+          <h2 class="text-3xl font-bold text-white mb-6">Nuestra Ubicación</h2>
+          <div class="flex items-start gap-4">
+            <div
+              class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0 text-white"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
+                ></path>
+              </svg>
+            </div>
+            <div>
+              <p class="text-xl text-white font-medium">
+                Av. Javier Prado Este 1234
+              </p>
+              <p class="text-gray-400">San Isidro, Lima - Perú</p>
+              <div class="mt-4 flex gap-4">
+                <a
+                  href="https://maps.app.goo.gl/ToWU5K418Twitdai7"
+                  target="_blank"
+                  class="px-6 py-2 bg-white text-black font-bold rounded-full hover:bg-gray-200 transition-colors text-sm"
+                >
+                  Ver en Google Maps
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="border-white/10" />
+
+        <!-- Hours -->
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-6">
+            Horario de Atención
+          </h3>
+          <div class="space-y-4">
+            <div
+              class="flex justify-between items-center text-gray-300 border-b border-white/5 pb-2"
+            >
+              <span>Lunes a Viernes</span>
+              <span class="font-medium text-white">9:00 AM - 8:00 PM</span>
+            </div>
+            <div
+              class="flex justify-between items-center text-gray-300 border-b border-white/5 pb-2"
+            >
+              <span>Sábados</span>
+              <span class="font-medium text-white">10:00 AM - 6:00 PM</span>
+            </div>
+            <div
+              class="flex justify-between items-center text-gray-300 border-b border-white/5 pb-2"
+            >
+              <span>Domingos</span>
+              <span class="font-medium text-white">Cerrado</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Facilities -->
+        <div class="grid grid-cols-2 gap-4">
+          <div
+            class="bg-[#18181b] p-4 rounded-xl border border-white/5 flex items-center gap-3"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6 text-white"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"
+              ></path>
+            </svg>
+            <span class="text-gray-300 text-sm">Estacionamiento</span>
+          </div>
+          <div
+            class="bg-[#18181b] p-4 rounded-xl border border-white/5 flex items-center gap-3"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6 text-white"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"
+              ></path>
+            </svg>
+            <span class="text-gray-300 text-sm">Carga Rápida</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Map -->
+      <div
+        class="h-[500px] lg:h-auto rounded-3xl overflow-hidden border border-white/10 relative"
+      >
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.666072387146!2d-77.03196292416866!3d-12.091755642268434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c86722d7650d%3A0x633f863b827e651f!2sAv.%20Javier%20Prado%20Este%2C%20San%20Isidro%2C%20Per%C3%fa!5e0!3m2!1ses!2sus!4v1700000000000!5m2!1ses!2sus"
+          width="100%"
+          height="100%"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        >
+        </iframe>
+      </div>
+    </div>
+  </section>
+</Layout>

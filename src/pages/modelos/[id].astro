@@ -1,0 +1,148 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { modelos } from "../../data/modelos";
+
+// 1. generar rutas estaticas
+export function getStaticPaths() {
+    return modelos.map((modelo) => ({
+        params: { id: modelo.id }, //la url sera /modelos/go
+        props: { modelo: modelo }, //pasas los datos completos del modelo a la pagina
+    }));
+}
+
+const { modelo } = Astro.props;
+---
+
+<Layout>
+    <section
+        class="relative pt-15 text-white h-screen bg-cover bg-center"
+        style={{ backgroundImage: `url(${modelo.galeria[0]})` }}
+    >
+        <div class="flex flex-col justify-center items-center mt-15">
+            <h1 class="text-4xl font-semibold">
+                {modelo.nombre}
+            </h1>
+            <p class="text-lg mt-2">{modelo.descripcion[0]}</p>
+        </div>
+    </section>
+
+    <section
+        class="relative pt-15 text-black h-screen bg-cover bg-center flex flex-col justify-end pb-20"
+        style={{ backgroundImage: `url(${modelo.galeria[1]})` }}
+    >
+        <div
+            class="flex justify-evenly w-full max-w-7xl mx-auto text-center px-4 divide-x divide-black"
+        >
+            <div class="pr-20">
+                <h1 class="text-3xl font-semibold">
+                    {modelo.descripcion[1]}
+                </h1>
+                <p>{modelo.descripcion[2]}</p>
+            </div>
+            <div class="pr-20">
+                <h1 class="text-3xl font-semibold">{modelo.descripcion[3]}</h1>
+                <p>{modelo.descripcion[4]}</p>
+            </div>
+            <div class="pr-20">
+                <h1 class="text-3xl font-semibold">{modelo.descripcion[5]}</h1>
+                <p>{modelo.descripcion[6]}</p>
+            </div>
+        </div>
+    </section>
+
+    {
+        modelo.galeria[2] && (
+            <section
+                class="relative pt-15 text-white h-screen bg-cover bg-center flex flex-col items-center pb-20"
+                style={{ backgroundImage: `url(${modelo.galeria[2]})` }}
+            >
+                <div class="flex flex-col justify-center items-center w-2xl text-center">
+                    <h1 class="text-4xl font-semibold">
+                        {modelo.descripcion[7]}
+                    </h1>
+                    <p>{modelo.descripcion[8]}</p>
+                </div>
+            </section>
+        )
+    }
+
+    {
+        modelo.galeria[3] && (
+            <section
+                class="relative pt-15 text-black h-screen bg-cover bg-center flex flex-col items-center pb-20"
+                style={{ backgroundImage: `url(${modelo.galeria[3]})` }}
+            >
+                <div class="flex flex-col justify-center items-center w-4xl text-center">
+                    <h1 class="text-4xl font-semibold">
+                        {modelo.descripcion[9]}
+                    </h1>
+                    <p>{modelo.descripcion[10]}</p>
+                </div>
+            </section>
+        )
+    }
+
+    {
+        modelo.galeria[4] && (
+            <section
+                class="relative pt-15 text-white h-screen bg-cover bg-center flex flex-col items-center pb-20"
+                style={{ backgroundImage: `url(${modelo.galeria[4]})` }}
+            >
+                <div class="flex flex-col justify-center items-center w-4xl text-center">
+                    <h1 class="text-4xl font-semibold">
+                        {modelo.descripcion[11]}
+                    </h1>
+                    <p>{modelo.descripcion[12]}</p>
+                </div>
+            </section>
+        )
+    }
+
+    {
+        modelo.galeria[5] && (
+            <section
+                class="relative pt-15 text-white h-screen bg-cover bg-center flex flex-col items-center pb-20"
+                style={{ backgroundImage: `url(${modelo.galeria[5]})` }}
+            >
+                <div class="flex flex-col justify-center items-center w-4xl text-center">
+                    <h1 class="text-4xl font-semibold">
+                        {modelo.descripcion[13]}
+                    </h1>
+                    <p>{modelo.descripcion[14]}</p>
+                </div>
+            </section>
+        )
+    }
+
+    {
+        modelo.galeria[6] && (
+            <section
+                class="relative pt-15 text-white h-screen bg-cover bg-center flex flex-col items-center pb-20"
+                style={{ backgroundImage: `url(${modelo.galeria[6]})` }}
+            >
+                <div class="flex flex-col justify-center items-center w-4xl text-center">
+                    <h1 class="text-4xl font-semibold">
+                        {modelo.descripcion[15]}
+                    </h1>
+                    <p>{modelo.descripcion[16]}</p>
+                </div>
+            </section>
+        )
+    }
+
+    {
+        modelo.galeria[7] && (
+            <section
+                class="relative pt-15 text-white h-screen bg-cover bg-center flex flex-col items-center pb-20"
+                style={{ backgroundImage: `url(${modelo.galeria[7]})` }}
+            >
+                <div class="flex flex-col justify-center items-center w-4xl text-center">
+                    <h1 class="text-4xl font-semibold">
+                        {modelo.descripcion[17]}
+                    </h1>
+                    <p>{modelo.descripcion[18]}</p>
+                </div>
+            </section>
+        )
+    }
+</Layout>
